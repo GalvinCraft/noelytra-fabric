@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "me.imgalvin.noelytra.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"NoElytraMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
