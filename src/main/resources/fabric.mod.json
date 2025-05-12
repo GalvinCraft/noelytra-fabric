@@ -3,7 +3,7 @@
 	"id": "noelytra",
 	"version": "${version}",
 	"name": "NoElytra",
-	"description": "Disables Elytas from being in the inventory! Does NOT disable Elytra's from generating in the world, but they cannot be picked up.",
+	"description": "Disables Elytras from being in the inventory! Does NOT disable Elytra's from generating in the world, but they cannot be picked up.",
 	"authors": [
 		"GalvinPython"
 	],
@@ -24,8 +24,8 @@
 		"noelytra.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21",
+		"fabricloader": ">=0.16.0",
+		"minecraft": "1.20.5,1.20.6",
 		"java": ">=21"
 	}
 }
