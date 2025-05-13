@@ -2,7 +2,7 @@
 	"required": true,
 	"package": "me.imgalvin.noelytra.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"mixins": [
+	"client": [
 		"NoElytraMixin"
 	],
 	"injectors": {
