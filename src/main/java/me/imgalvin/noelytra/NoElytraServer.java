@@ -2,10 +2,8 @@ package me.imgalvin.noelytra;
 
 import net.fabricmc.api.DedicatedServerModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.world.entity.player.Inventory;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -33,26 +31,23 @@ public class NoElytraServer implements DedicatedServerModInitializer {
     private void checkInventories() {
         if (server != null) {
             // Loop through all players and check their inventories
-            server.getPlayerManager().getPlayerList().forEach(player -> {
-                PlayerInventory inventory = player.getInventory();
+            server.getPlayerList().getPlayers().forEach(player -> {
+                Inventory inventory = player.getInventory();
 
                 // Loop through the player's inventory
-                for (int i = 0; i < inventory.size(); i++) {
-                    ItemStack stack = inventory.getStack(i);
+                for (int i = 0; i < inventory.getContainerSize(); i++) {
+                    net.minecraft.world.item.ItemStack stack = inventory.getItem(i);
 
                     // Check if the item is an Elytra
-                    if (stack.getItem() == Items.ELYTRA) {
+                    if (stack.getItem() == net.minecraft.world.item.Items.ELYTRA) {
                         // Remove Elytra by setting the stack to empty
-                        inventory.setStack(i, ItemStack.EMPTY);
+                        inventory.setItem(i, net.minecraft.world.item.ItemStack.EMPTY);
                         System.out.println("[NoElytraServer] Removed Elytra from slot " + i + " in " + player.getName().getString() + "'s inventory.");
                     }
                 }
 
                 // Mark the inventory as dirty so the changes take effect
-                inventory.markDirty();
-
-                // Send updates to the player's screen
-                player.currentScreenHandler.sendContentUpdates();
+                inventory.setChanged();
             });
         }
     }
