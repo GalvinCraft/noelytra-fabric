@@ -1,33 +1,32 @@
 {
-	"schemaVersion": 1,
-	"id": "noelytra",
-	"version": "${version}",
-	"name": "NoElytra",
-	"description": "Disables Elytras from being in the inventory! Does NOT disable Elytra's from generating in the world, but they cannot be picked up.",
-	"authors": [
-		"GalvinPython"
-	],
-	"contact": {
-		"homepage": "https://github.com/galvinalvin/noelytra-fabric",
-		"sources": "https://github.com/galvinalvin/noelytra-fabric",
-		"issues": "https://github.com/galvinalvin/noelytra-fabric/issues"
-	},
-	"license": "MIT",
-	"icon": "assets/noelytra/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"client": [
-			"me.imgalvin.noelytra.NoElytra"
-		],
-		"server": [
-			"me.imgalvin.noelytra.NoElytraServer"
-		]
-	},
-
-	"depends": {
-		"fabricloader": ">=0.16.0",
-		"minecraft": "26.1-alpha.4",
-		"java": ">=25",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "noelytra",
+  "version": "${version}",
+  "name": "NoElytra",
+  "description": "Disables Elytras from being in the inventory! Does NOT disable Elytra's from generating in the world, but they cannot be picked up.",
+  "authors": [
+    "GalvinPython"
+  ],
+  "contact": {
+    "homepage": "https://github.com/galvinalvin/noelytra-fabric",
+    "sources": "https://github.com/galvinalvin/noelytra-fabric",
+    "issues": "https://github.com/galvinalvin/noelytra-fabric/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/noelytra/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.imgalvin.noelytra.NoElytra"
+    ],
+    "server": [
+      "me.imgalvin.noelytra.NoElytraServer"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "26.1",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
 }
